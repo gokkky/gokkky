@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <center><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h1>START GAME</h1>
+    </center>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        let recognition = new window.SpeechRecognition();
+        recognition.start();
+        let transcript;
+        recognition.onresult = (e) => {
+            for (let i = e.resultIndex, len = e.results.length; i < len; i++) {
+                if (e.results[i].isFinal) {
+                    transcript = e.results[i][0].transcript;
+                }
+            }
+            transcript = transcript.toLowerCase();
+            if ("start" == transcript.trim()) {
+                location.href = "quickmath.html";
+            }
+        }
+
+        swal({
+            title: "TIP",
+            text: "say 'start' for start game",
+            icon: "warning",
+            button: false,
+            timer: 5000
+        });
+    </script>
+</body>
+
+</html>
