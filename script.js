@@ -77,7 +77,6 @@ function timedCount() {
         recognition.stop();
         clearTimeout(t);
     }
-
 }
 
 function noti() {
@@ -98,9 +97,7 @@ function noti() {
                 timer: 1500
             });
         }
-
     }
-
 }
 
 function random() {
