@@ -5,8 +5,13 @@
 </head>
 
 <body>
-    <center><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h1>START GAME</h1>
+    <center><br><br><br><br><br><br><br><br>
+        <b>
+            <font size="64">ระดับ</font>
+        </b><br><br>
+        <h1>ง่าย<br><br>
+            ปานกลาง<br><br>
+            ยาก<br><br></h1>
     </center>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -23,10 +28,19 @@
                     transcript = e.results[i][0].transcript;
                 }
             }
-            transcript = transcript.toLowerCase();
+
             console.log(transcript);
-            if ("start" == transcript.trim()) {
-                location.href = "level.html";
+            transcript = transcript.toLowerCase();
+            if ("ง่าย" == transcript.trim()) {
+                location.href = "eazy.html";
+                //recognition.stop();
+            }
+            else if ("ปานกลาง" == transcript.trim()) {
+                location.href = "medium.html";
+                //recognition.stop();
+            }
+            else if ("ยาก" == transcript.trim()) {
+                location.href = "hard.html";
                 //recognition.stop();
             }
         }
@@ -34,10 +48,10 @@
 
         swal({
             title: "คำแนะนำ",
-            text: "พูด 'start' เพื่อเริ่มเกม",
+            text: "พูดเลเวลที่ท่านต้องการเล่น",
             icon: "warning",
             button: false,
-            timer: 5000
+            timer: 3000
         });
     </script>
 

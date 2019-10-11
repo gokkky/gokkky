@@ -120,3 +120,8 @@ h1 span:nth-child(9) {
       0 50px 25px rgba(0, 0, 0, 0.2);
   }
 }
+
+.myClass{
+  width:400px;
+  height:200px;
+}
